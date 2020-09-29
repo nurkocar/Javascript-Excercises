@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Array Sort</h2>
+
+    <p id="myArray">I have this array: </p>
+
+    <p>Click the button to sort the array in ascending order with multiply 2 times.</p>
+
+    <button id="sort">CLICK TO SORT</button>
+
+    <p id="sortedArray"></p>
+
+    <script>
+        const myArray = [31, 23, 5, 1, 96, 60, 3, 66];
+        document.querySelector('#myArray').innerText += ` [${myArray}]`;
+
+        document.querySelector('#sort').addEventListener('click', sortMyArray)
+
+        function sortMyArray() {
+            
+            myArray.sort(function (a, b) { return a - b});
+
+            let multipliedArray = myArray.map(function(num){return num*2});
+            
+            document.querySelector('#sortedArray').innerText = `[${multipliedArray}]`;
+        }
+
+    </script>
+</body>
+
+</html>
